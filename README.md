@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # -gestion-soutenance
 Application web de gestion des soutenances
@@ -26,9 +27,6 @@ npm run dev
 ```
 
 L'app se connecte par défaut à `http://localhost:5000` (voir `.env`,
-variable `VITE_API_URL`) — adaptez cette valeur si votre back-end tourne
-ailleurs.
-
-## Identifiants de test (côté back-end)
-- Email : `Info@gmail.com`
-- Code d'accès : `INFORMATIQUE`
+<<<<<<< HEAD
+=======
+>>>>>>> 6807312e19088fd7fecfbd47c3b01198bf8b2d9c
