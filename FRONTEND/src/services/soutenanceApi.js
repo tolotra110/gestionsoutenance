@@ -2,8 +2,7 @@
 /**
  * Accès aux soutenances de l'espace évaluateur.
  */
-
-const API_URL = 'http://localhost:5000/api/soutenances';
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/soutenances`;
 
 function obtenirToken() {
   const token = localStorage.getItem('emit_token');
