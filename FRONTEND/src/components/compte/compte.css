@@ -1,0 +1,20 @@
+/* Page « Paramètres » (responsable de mention et évaluateur) : styles autonomes */
+.cpt { max-width: 34rem; display: grid; gap: 1.25rem; }
+.cpt__titre { font-size: 1.5rem; font-weight: 700; color: #0f1f3d; margin: 0; }
+.cpt__sous { margin: 0.25rem 0 0; color: #6b7280; font-size: 0.9rem; }
+.cpt__carte { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.25rem; display: grid; gap: 1rem; }
+.cpt__section { margin: 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; }
+.cpt__champ { display: grid; gap: 0.35rem; }
+.cpt__champ label { font-size: 0.85rem; font-weight: 600; color: #0f1f3d; }
+.cpt__champ small { color: #6b7280; font-size: 0.78rem; }
+.cpt__entree { display: flex; align-items: center; gap: 0.5rem; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 0.75rem; background: #f9fafb; }
+.cpt__entree:focus-within { border-color: #3b5b99; background: #fff; }
+.cpt__entree input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 0.7rem 0; font-size: 0.92rem; outline: none; color: #0f1f3d; }
+.cpt__entree button { border: 0; background: transparent; cursor: pointer; font-size: 0.78rem; color: #3b5b99; padding: 0.25rem; }
+.cpt__sep { border: 0; border-top: 1px solid #e5e7eb; margin: 0; }
+.cpt__actions { display: flex; justify-content: flex-end; }
+.cpt__btn { border: 0; cursor: pointer; border-radius: 10px; padding: 0.7rem 1.25rem; font-weight: 600; font-size: 0.9rem; background: #0f1f3d; color: #fff; }
+.cpt__btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.cpt__msg { margin: 0; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 0.88rem; }
+.cpt__msg--erreur { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+.cpt__msg--succes { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }

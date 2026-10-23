@@ -1,0 +1,10 @@
+{
+  "cli": { "version": ">= 12.0.0" },
+  "build": {
+    "apk": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" },
+      "env": { "EXPO_PUBLIC_API_URL": "http://REMPLACER_PAR_VOTRE_URL:4000" }
+    }
+  }
+}

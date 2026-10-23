@@ -1,0 +1,5 @@
+export { default as BlocDocuments } from './BlocDocuments'
+export { default as BlocSoutenance } from './BlocSoutenance'
+export { default as BlocTheme } from './BlocTheme'
+export { default as EtapesWorkflow } from './EtapesWorkflow'
+export { default as FormulaireTheme } from './FormulaireTheme'
