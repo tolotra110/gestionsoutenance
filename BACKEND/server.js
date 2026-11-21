@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const express = require("express");
@@ -16,25 +15,17 @@ const publicRoutes = require("./Routes/publicRoutes");
 const donneesRoutes = require("./Routes/donneesRoutes");
 
 const app = express();
-// Afficher les requêtes reçues dans le terminal
 app.get("/test", (req, res) => {
-    res.status(200).json({
-        message: "Le backend fonctionne correctement"
-    });
+    res.status(200).json({ message: "Le backend fonctionne correctement" });
 });
 app.use((req, res, next) => {
     console.log("Requête reçue :", req.method, req.originalUrl);
     next();
 });
 
-
 app.use(cors());
-
-
-// Autoriser les requêtes JSON volumineuses pour les imports Excel/CSV
 app.use(express.json({ limit: "50mb" }));
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/etudiants", etudiantRoutes);
 app.use("/api/salles", salleRoutes);
@@ -48,8 +39,19 @@ app.use("/api/public", publicRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-require("./Config/ensureSchema")().finally(() => {
-    app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-});
-});
+// Render utilise DATABASE_URL côté serveur : aucun mot de passe à saisir sur le PC.
+// Les migrations sont enregistrées dans schema_migrations et ne sont pas rejouées.
+const runMigrations = require("./Config/runMigrations");
+const ensureSchema = require("./Config/ensureSchema");
+
+runMigrations()
+    .then(() => ensureSchema())
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Serveur démarré sur le port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error("Démarrage annulé : migration PostgreSQL impossible.", error);
+        process.exit(1);
+    });
